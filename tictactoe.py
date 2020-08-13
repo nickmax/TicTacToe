@@ -242,11 +242,11 @@ def xmove5():
     
 def boardstate():
     try:
-        print("---------" + (" "*15)
-        print("| " + cells2[0] + " " + cells2[1] + " " + cells2[2] + " |" + (" "*15) +"| " + movelist[0] + " " + movelist[1] + " " + movelist[2] + " |")
-        print("| " + cells2[3] + " " + cells2[4] + " " + cells2[5] + " |" + (" "*15) +"| " + movelist[3] + " " + movelist[4] + " " + movelist[5] + " |")
-        print("| " + cells2[6] + " " + cells2[7] + " " + cells2[8] + " |" + (" "*15) +"| " + movelist[6] + " " + movelist[7] + " " + movelist[8] + " |")
-        print("---------" + (" "*15)
+        print("---------" + ((" ")*15)+"---------")
+        print("| " + cells2[0] + " " + cells2[1] + " " + cells2[2] + " |" + ((" ")*15) +"| " + movelist[0] + " " + movelist[1] + " " + movelist[2] + " |")
+        print("| " + cells2[3] + " " + cells2[4] + " " + cells2[5] + " |" + ((" ")*15) +"| " + movelist[3] + " " + movelist[4] + " " + movelist[5] + " |")
+        print("| " + cells2[6] + " " + cells2[7] + " " + cells2[8] + " |" + ((" ")*15) +"| " + movelist[6] + " " + movelist[7] + " " + movelist[8] + " |")
+        print("---------" + ((" ")*15)+"---------")
     except:
         missing = 9 - len(cells)
         for x in range(missing):
