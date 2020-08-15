@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!usr/bin/python3
 
 import os
 import colored
@@ -282,15 +282,16 @@ def checkresult():
     if (abs(len(x_moved) - len(o_moved)) > 1 or
     zeroy == 2 and zerox ==1):
         cprint('\nImpossible', 'red', attrs=['blink'])
-        quit()
+        askagain()
     elif zerox ==1:
         cprint('\nX wins ', 'green', attrs=['blink'])
-        quit()
+        askagain()
     elif zeroy == 2:
         cprint('\nO wins', 'magenta', attrs=['blink'])
+        askagain()
     elif len(x_moved) + len(o_moved) == 9:
         cprint('\nDraw', 'blue', attrs=['blink'])
-        quit()
+        askagain()
     elif "_" in cells2:
          cprint('\nGame not finished', 'cyan' , attrs=['blink'])
          
@@ -316,14 +317,7 @@ def clear():
     os.system("clear")
     
     
-def askagain():
-    print("Would you like to play another round!")
-    print("Yes or -y to continue")
-    print("-q or quit to exit")
-    rematch = input()
-    if rematch == "Yes" or "yes" or "-y":
-        clear()
-        game
+
         
 
     
@@ -395,21 +389,20 @@ def game():
     
     
 def askagain():
-    print("Would you like to play another round!")
-    print("Yes or -y to continue")
-    print("-q or quit to exit")
+    cprint('Would you like to play another round?', 'cyan' , attrs=['blink'])
+    cprint("'Yes' or '-y' to continue ", 'green' , attrs=['blink'])
+    cprint("'No' or 'quit' to exit", 'red' , attrs=['blink'])
     rematch = input()
     if rematch in ["Yes","yes","-y","yaaah","-Y"]:
         clear()
         game()
     elif rematch in ["no","naah","-n","-q","quit","Quit"]:
         clear()
-        os.system("exit")
+        quit()
         
         
     
 game()
-
 askagain()
     
     
