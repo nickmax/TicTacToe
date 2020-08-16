@@ -13,6 +13,16 @@ red = fg("red")
 green = fg("green")
 blue = fg("blue")
 reset = attr("reset")
+yellow = fg("yellow")
+link = "https://github.com/nickmax/TicTacToe.git"
+def Licenses():
+    print("Copyright 2020 N.MATHENGE "+ red+"https://www.instagram.com/_math.enge_/ "+ reset +yellow +">> INSTAGRAM"+reset )
+
+    print("Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:")
+
+    print("The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.")
+
+    print("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.")
 
 
 
@@ -248,11 +258,11 @@ def xmove5():
     
 def boardstate():
     try:
-        print("---------" + ((" ")*15)+"---------")
-        print("| " + cells2[0] + " " + cells2[1] + " " + cells2[2] + " |" + ((" ")*15) +"| " + movelist[0] + " " + movelist[1] + " " + movelist[2] + " |")
-        print("| " + cells2[3] + " " + cells2[4] + " " + cells2[5] + " |" + ((" ")*15) +"| " + movelist[3] + " " + movelist[4] + " " + movelist[5] + " |")
-        print("| " + cells2[6] + " " + cells2[7] + " " + cells2[8] + " |" + ((" ")*15) +"| " + movelist[6] + " " + movelist[7] + " " + movelist[8] + " |")
-        print("---------" + ((" ")*15)+"---------")
+        print(red +"---------" + ((" ")*15)+"---------"+reset)
+        print(green +"| " + cells2[0] + " " + cells2[1] + " " + cells2[2] + " |" + ((" ")*15) +"| " + movelist[0] + " " + movelist[1] + " " + movelist[2] + " |"+reset)
+        print(blue +"| " + cells2[3] + " " + cells2[4] + " " + cells2[5] + " |" + ((" ")*15) +"| " + movelist[3] + " " + movelist[4] + " " + movelist[5] + " |"+reset)
+        print(green +"| " + cells2[6] + " " + cells2[7] + " " + cells2[8] + " |" + ((" ")*15) +"| " + movelist[6] + " " + movelist[7] + " " + movelist[8] + " |"+reset)
+        print(red +"---------" + ((" ")*15)+"---------"+reset)
     except:
         missing = 9 - len(cells)
         for x in range(missing):
@@ -319,11 +329,11 @@ def example():
     print(green+"  | | | | (__ | | (_| | (__ | | (_) |  __/ "+reset) 
     print(blue+"  |_| |_|\___||_|\__,_|\___||_|\___/ \___| "+reset) 
     print()
-    print("---------")
-    print("| " + movelist[0] + " " + movelist[1] + " " + movelist[2] + " |")
-    print("| " + movelist[3] + " " + movelist[4] + " " + movelist[5] + " |")
-    print("| " + movelist[6] + " " + movelist[7] + " " + movelist[8] + " |")
-    print("---------")
+    print(red+"---------"+reset)
+    print(green +"| " + movelist[0] + " " + movelist[1] + " " + movelist[2] + " |"+reset)
+    print(blue+"| " + movelist[3] + " " + movelist[4] + " " + movelist[5] + " |"+reset)
+    print(green+"| " + movelist[6] + " " + movelist[7] + " " + movelist[8] + " |"+reset)
+    print(red+"---------"+reset)
 
 def clear():
     os.system("clear")
@@ -404,13 +414,20 @@ def askagain():
     print("Would you  like to play another Round?"+blue+reset)
     cprint("'Yes' or '-y' to continue ", 'green' , attrs=['blink'])
     cprint("'No' or 'quit' to exit", 'red' , attrs=['blink'])
-    rematch = input()
-    if rematch in ["Yes","yes","-y","yaaah","-Y"]:
+    print(green+"'L' or '-l' for Licenses and Credits")
+    print(blue + "Please " + reset + yellow +"STAR "+ reset + blue + "this on Github"+reset+link)
+    rematch = input(">>")
+    if rematch in ["Yes","yes","-y","yaaah","-Y","y"]:
         clear()
         game()
-    elif rematch in ["no","naah","-n","-q","quit","Quit"]:
+    elif rematch in ["no","naah","-n","-q","quit","Quit","n"]:
         clear()
         quit()
+    elif rematch in ["-l","L"]:
+        Licenses()
+        askagain()
+        
+        
         
         
     
