@@ -8,7 +8,7 @@ from termcolor import *
 from colored import bg,fg,attr
 
 #Colours
-
+#2
 red = fg("red")
 green = fg("green")
 blue = fg("blue")
@@ -426,11 +426,9 @@ def askagain():
     elif rematch in ["-l","L"]:
         Licenses()
         askagain()
-        
-        
-        
-        
-    
+    else:
+        print("Unknown Command")
+        quit()
 game()
 askagain()
     
