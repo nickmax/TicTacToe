@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 
 import os
 import colored
@@ -7,6 +7,12 @@ from os import *
 from termcolor import *
 from colored import bg,fg,attr
 
+#Colours
+
+red = fg("red")
+green = fg("green")
+blue = fg("blue")
+reset = attr("reset")
 
 
 
@@ -307,6 +313,12 @@ def boardfinal():
     print("---------")
     
 def example():
+    print(red+" _____ _     _____         _____"+reset)          
+    print(red+"|_   _(_) __|_   _|_ _  __|_   _|__   ___ "+reset) 
+    print(green+"  | | | |/ __|| |/ _` |/ __|| |/ _ \ / _ \ "+reset) 
+    print(green+"  | | | | (__ | | (_| | (__ | | (_) |  __/ "+reset) 
+    print(blue+"  |_| |_|\___||_|\__,_|\___||_|\___/ \___| "+reset) 
+    print()
     print("---------")
     print("| " + movelist[0] + " " + movelist[1] + " " + movelist[2] + " |")
     print("| " + movelist[3] + " " + movelist[4] + " " + movelist[5] + " |")
@@ -389,7 +401,7 @@ def game():
     
     
 def askagain():
-    cprint('Would you like to play another round?', 'cyan' , attrs=['blink'])
+    print("Would you  like to play another Round?"+blue+reset)
     cprint("'Yes' or '-y' to continue ", 'green' , attrs=['blink'])
     cprint("'No' or 'quit' to exit", 'red' , attrs=['blink'])
     rematch = input()
