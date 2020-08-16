@@ -16,7 +16,14 @@ TicTacToe is a game in which two players seek in alternate turns to complete a r
   
     $ chmod +x tictactoe.py
   
-    $ ./tictactoe.py
+    $ cd
+    
+    $ echo "source ~/TicTacToe/tictactoe.sh">>.bashrc
+    
+    $ exit 
+    
+    $ tictactoe
+    
  
  ## Tested On:
  * Ubuntu 20.04
