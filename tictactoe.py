@@ -307,6 +307,7 @@ def checkresult():
         askagain()
     elif len(x_moved) + len(o_moved) == 9:
         cprint('\nDraw', 'blue', attrs=['blink'])
+        quit()
         askagain()
     elif "_" in cells2:
          cprint('\nGame not finished', 'cyan' , attrs=['blink'])
